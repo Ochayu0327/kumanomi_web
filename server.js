@@ -3,9 +3,16 @@ var server = express();
 
 server.use(express.static(__dirname + "/Server"));
 
+
 /* about 用的 */
 server.get("/even_card", (req, res) => {
   const even_card = [
+
+    {
+      pic: "/img/about/comingsoon.png",
+      title: "光踊祭",
+      text: "2026/02/01 @台北流行音樂中心 Live house D",
+    },
     
     {
       pic: "/img/about/ele.png",
