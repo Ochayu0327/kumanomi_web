@@ -29,6 +29,7 @@ const serviceApp = createApp({
 
 
 
+
 $.ajax({
   url: "/even_card",
   method: "get",
