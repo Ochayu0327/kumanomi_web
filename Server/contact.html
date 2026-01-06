@@ -62,63 +62,66 @@
       <section class="banner2 d-flex align-items-center justify-content-center text-white"></section>
       <h1 id="title" class="blur-box">聯絡我們</h1>
     
-      <p class="text my-5">Kumanomi以"推廣御宅藝"為目標，進行以活動與提供服務!</p>
-      
-      <div class="container my-5">
-        
-       <div class="row g-4 servies">
-    
-        <div id="top_card1" class="col-sm-4 mb-5">
-          <div class="card h-100"> <div class="card-body">
-              <img class="card-img-top" src="/img/about/videomaking.png">
-              <h5 class="card-title my-4">影片製作</h5>
-              <p class="card-text">活動紀錄、形象影片、宣傳剪輯</p>
-            </div>
-          </div>
-        </div>
-    
-        <div id="top_card2" class="col-sm-4 mb-5">
-          <div class="card h-100">
-            <div class="card-body">
-              <img class="card-img-top" src="/img/about/teaching.png">
-              <h5 class="card-title my-4">開設講座</h5>
-              <p class="card-text">教學課程、工作坊、體驗活動</p>
-            </div>
-          </div>
-        </div>
-    
-        <div id="top_card3" class="col-sm-4 mb-5">
-          <div class="card h-100">
-            <div class="card-body">
-              <img class="card-img-top" src="/img/about/pafomas.png">
-              <h5 class="card-title my-4">現場演出</h5>
-              <p class="card-text">商業演出、舞台表演、活動合作</p>
-            </div>
-          </div>
-        </div>
-    
-       </div>
-      </div> 
-    
+      <p class="text my-5">活動演出、教學講座、影片合作等需求，歡迎聯絡我們!</p>
+      <p class="text my-5">我們將帶給您最專業的服務!!</p>
     
     </header>
- <!-- 聯絡我們 -->
+   <div class="contact-card text-center p-4">
+        
+        <!-- Logo / 名稱 -->
+        <img src="/img/logos/Kumanomi_logo_whi.png" alt="logo" class="mb-1" width="80">
+        <h4 class="fw-bold mb-3">KUMANOMI Wotagei</h4>
+
+        <!-- 圖示超連結 -->
+
+        <div class="my-5"> <div class="container">
+          <div class="d-flex justify-content-center align-items-center gap-4">
+           
+            
+            <a href="https://www.youtube.com/@OchayulovE" class="text-white fs-2 mb-2" id="youtube_icon">
+              <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="https://www.instagram.com/kumanomi.wota?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" class="text-white fs-2 mb-2"  id="ig_icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@ochayulove" class="text-white fs-2 mb-2"  id="tiktok_icon">
+              <i class="fab fa-tiktok"></i>
+            </a>
+
+      
+          </div>
+
+        <!-- Email -->
+        <p class="contact-item">
+          <i id="email"class="fa-sharp fa-solid fa-envelope-open mb-5"></i>
+          <a href="https://mail.google.com/mail">
+            ochayu0327@gmail.com
+          </a>
+        </p>
+
+      </div>
+    </div>    
+  </div>    
+
+ <!-- 關於我們 -->
 <section class="connect_card mt-5 py-5 text-white">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center flex-column-reverse flex-md-row">
 
       <!-- 左側文字 -->
-      <div class="col-md-5">
-        <h2 class="mb-5" id="title_l">聯繫我們</h2>
-        <p id="text">想讓您的活動演出與眾不同嗎?</p>
-        <p id="text">想了解體驗特別的「御宅藝文化」嗎?</p>
-        <h5>快來聯繫我們！</h5>
-        <a class="btn my-5" href="contact.html">聯繫方式</a>
+      <div class="col-md-5 mt-4 text-center text-md-start">
+        <h2 class="my-3" id="title_l">關於我們</h2>
+        <p id="text">Kumanomi是一個御宅藝表演團體。</p>
+        <p id="text">藉由光棒揮舞出的殘影搭配上整齊的御宅藝動作編排，帶大家體驗「光與力」的視覺饗宴！</p>
+        <h5>提供哪些服務? 活動範疇? 團隊歷程?</h5>
+        <a class="btn my-5" href="about.html">了解更多</a>
       </div>
 
       <!-- 右側圖片 -->
       <div class="col-md-7 text-end">
-        <img id="con_pic" src="/img/nambus.png" class="img-fluid rounded" alt="">
+        <img id="con_pic" src="/img/video_1_ele.gif" class="img-fluid rounded" alt="">
       </div>
 
     </div>
@@ -153,7 +156,7 @@
 
 </body>
 
-
+<div id="cursor-trail"></div>
 
 <script>
 
@@ -171,8 +174,8 @@ gsap.fromTo(".banner2",
 );
 
 
-//kumanomi以...滾動
-  gsap.from(".text", {
+//活動演出、教學講座、影片合作...滾動
+gsap.from(".text", {
     scrollTrigger:{
       trigger:"#title",
       start:"top 200px",
@@ -182,93 +185,43 @@ gsap.fromTo(".banner2",
     },
     opacity: 0, y: 50, duration: 2
   });
-//範疇...左卡滾動
-  gsap.from("#top_card1", {
+
+//kumanomi以...滾動
+gsap.from(".contact-card", {
     scrollTrigger:{
       trigger:".text",
-      start:"top 210px",
-      end:"bottom 190px",
+      start:"top 200px",
+      end:"bottom 150px",
       scrub:false,
       markers:0,
     },
-    opacity: 0, x:-100, duration: 2
-  });
-//範疇...中卡滾動
-  gsap.from("#top_card2", {
-    scrollTrigger:{
-      trigger:".text",
-      start:"top 215px",
-      end:"bottom 195px",
-      scrub:false,
-      markers:0,
-    },
-    opacity: 0, y:100, duration: 2
-  });
-//範疇...右卡滾動
-  gsap.from("#top_card3", {
-    scrollTrigger:{
-      trigger:".text",
-      start:"top 220px",
-      end:"bottom 200px",
-      scrub:false,
-      markers:false,
-    },
-    opacity: 0, x:100, duration: 2
+    opacity: 0, y: 50, duration: 2
   });
 
 
-   //歷程圖片顯示.
-   gsap.from("#bg", {
-    scrollTrigger:{
-      trigger:".servies",
-      start:"top 100px",
-      end:"bottom 200px",
-      scrub:false,
-      markers:0,
-    },
-    opacity: 0, duration: 1
-  });
 
-
-  //歷程顯示.
-  gsap.from(".exp", {
-    scrollTrigger:{
-      trigger:".pic2",
-      start:"top 100px",
-      end:"bottom 200px",
-      scrub:false,
-      markers:0,
-    },
-    opacity: 0, x:100, duration: 1
-  });
-
-
-  //歷程一張一張跑出來我移去vue裡面寫
-
-
-
-  //聯繫.
+ // 聯繫.
   gsap.from(".connect_card", {
     scrollTrigger:{
-      trigger:".footer-copy",
-      start:"bottom 200px",
+      trigger:"#email",
+      start:"top 50px",
       scrub:false,
-      markers:1,
+      markers:0,
     },
     opacity: 0, y:100, duration: 1
   });
 
   //footer
 
-   gsap.to(".footer-bg", {
+  gsap.to(".footer-bg", {
     scrollTrigger:{
       trigger:".footer-copy",
-      start:"top 50px",
-      end:"bottom -10px",
+      start:"top 800px",
+      end:"bottom 700px",
       scrub:1,
       markers:0,
     },
-    scale:1.2,duration: 1
+    scale:1.1,duration: 1
   });
 
 
@@ -278,6 +231,30 @@ gsap.fromTo(".banner2",
   gsap.from("#bg1", {
       opacity: 0, duration: 1
   });
+
+    //發光鼠標
+    const trailContainer = document.getElementById("cursor-trail");
+
+window.addEventListener("mousemove", (e) => {
+  const dot = document.createElement("div");
+  dot.classList.add("trail-dot");
+  trailContainer.appendChild(dot);
+
+  gsap.set(dot, {
+    x: e.clientX - 8,
+    y: e.clientY - 8
+  });
+
+  gsap.to(dot, {
+    opacity: 0,
+    scale: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    onComplete: () => {
+      dot.remove();
+    }
+  });
+});
 
 
 </script>

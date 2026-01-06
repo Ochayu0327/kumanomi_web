@@ -97,7 +97,7 @@
           <h3 class="text-center my-4 t1">螢光棒舞蹈、舞台演出、文化講座 </h3>
           
           <p id="text"> 
-            「Kumanomi」是一個由台灣資深御宅藝師OchayulovE為號召，與一群喜歡御宅藝文化的新秀/豪傑們集結而成的御宅藝表演團體。藉由光棒揮舞出的殘影搭配上整齊的御宅藝動作編排，帶大家感受「光與力」的美感饗宴！
+            「Kumanomi」是一個由台灣資深御宅藝師OchayulovE為號召，與一群喜歡御宅藝文化的新秀/豪傑們集結而成的御宅藝表演團體。藉由光棒揮舞出的殘影搭配上整齊的御宅藝動作編排，帶大家體驗「光與力」的視覺饗宴！
           </p>
 
           <!-- 圖示超連結 -->
@@ -195,16 +195,17 @@
 <!-- 聯絡我們 -->
 <section class="connect_card mt-5 py-5 text-white">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center flex-column-reverse flex-md-row">
+
 
       <!-- 左側文字 -->
-      <div class="col-md-5">
-        <h2 class="mb-5" id="title_l">聯繫我們</h2>
+      <div class="col-md-5 mt-4 text-center text-md-start">
+        <h2 class="my-3 " id="title_l">聯繫我們</h2>
         <p id="text">想讓您的活動演出與眾不同嗎?</p>
         <p id="text">想了解體驗特別的「御宅藝文化」嗎?</p>
         <h5>快來聯繫我們！</h5>
         <a class="btn my-5" href="contact.html">聯繫方式</a>
-      </div>
+      </div> 
 
       <!-- 右側圖片 -->
       <div class="col-md-7 text-end">
@@ -242,6 +243,9 @@
 
 
 </body>
+
+
+<div id="cursor-trail"></div>
 
 <script>
      //banner文字
@@ -350,6 +354,32 @@
       markers:0,
     },
     scale:1.1,duration: 1
+  });
+
+
+
+  //發光鼠標
+  const trailContainer = document.getElementById("cursor-trail");
+
+  window.addEventListener("mousemove", (e) => {
+    const dot = document.createElement("div");
+    dot.classList.add("trail-dot");
+    trailContainer.appendChild(dot);
+
+    gsap.set(dot, {
+      x: e.clientX - 8,
+      y: e.clientY - 8
+    });
+
+    gsap.to(dot, {
+      opacity: 0,
+      scale: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      onComplete: () => {
+        dot.remove();
+      }
+    });
   });
 
 

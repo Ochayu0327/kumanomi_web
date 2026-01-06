@@ -148,16 +148,17 @@
 <!-- 聯絡我們 -->
 <section class="connect_card mt-5 py-5 text-white">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center flex-column-reverse flex-md-row">
+
 
       <!-- 左側文字 -->
-      <div class="col-md-5">
-        <h2 class="mb-5" id="title_l">聯繫我們</h2>
+      <div class="col-md-5 mt-4 text-center text-md-start">
+        <h2 class="my-3 " id="title_l">聯繫我們</h2>
         <p id="text">想讓您的活動演出與眾不同嗎?</p>
         <p id="text">想了解體驗特別的「御宅藝文化」嗎?</p>
         <h5>快來聯繫我們！</h5>
         <a class="btn my-5" href="contact.html">聯繫方式</a>
-      </div>
+      </div> 
 
       <!-- 右側圖片 -->
       <div class="col-md-7 text-end">
@@ -196,14 +197,14 @@
 
 </body>
 
-
+<div id="cursor-trail"></div>
 
 <script>
 
 //圖片1縮放
 gsap.fromTo(".banner", 
-  { scale: 1.5 },
-  { scale: 1.1, 
+  { scale: 2 },
+  { scale: 1.5, 
     scrollTrigger: {
       trigger: "#title",
       start: "top 780px",
@@ -282,7 +283,7 @@ gsap.fromTo(".banner",
       scrub:false,
       markers:0,
     },
-    opacity: 0, x:100, duration: 1
+    opacity: 0, y:200, duration: 1
   });
 
 
@@ -321,6 +322,31 @@ gsap.fromTo(".banner",
   gsap.from("#bg1", {
       opacity: 0, duration: 1
   });
+
+
+    //發光鼠標
+    const trailContainer = document.getElementById("cursor-trail");
+
+window.addEventListener("mousemove", (e) => {
+  const dot = document.createElement("div");
+  dot.classList.add("trail-dot");
+  trailContainer.appendChild(dot);
+
+  gsap.set(dot, {
+    x: e.clientX - 8,
+    y: e.clientY - 8
+  });
+
+  gsap.to(dot, {
+    opacity: 0,
+    scale: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    onComplete: () => {
+      dot.remove();
+    }
+  });
+});
 
 
 </script>
